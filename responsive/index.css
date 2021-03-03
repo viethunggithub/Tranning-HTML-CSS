@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.speaker-form-header {
+    background-color: #F6F7F8;
+    margin: 40px 0;
+    padding: 50px;
+    text-align:  center;
+    border: 1px solid  #D6D9DC;
+    border-radius: 3px;
+    width: 80%;
+}
+.speaker-form {
+    background-color: #F6F7F8;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 80%;
+    padding: 50px;
+    margin: 0 0 40px 0;
+  }
+.form-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.form-row input[type='text'],.legacy-form-row legend, .form-row input[type='email'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+  }
+  .form-row button {
+    font-size: 16px;
+    font-weight: bold;
+  
+    color: #FFFFFF;
+    background-color: #5995DA;
+  
+    border: none;
+    border-radius: 3px;
+  
+    padding: 10px 40px;
+    cursor: pointer;
+  }
+  .form-row label {
+    margin-bottom: 15px;
+  }
+  .legacy-form-row {
+      border: none;
+      margin-bottom: 40px;
+  }
+  .legacy-form-row input[type='radio'], 
+    .legacy-form-row .radio-label {
+        float: left;
+    }
+    .legacy-form-row legend {
+        margin-bottom: 15px;
+      }
+      .legacy-form-row .radio-label {
+        display: block;
+        font-size: 14px;
+        padding: 0 20px 0 10px;
+      }
+      
+      .legacy-form-row input[type='radio'] {
+        margin-top: 2px;
+      }
+      .form-row select {
+        width: 100%;
+        padding: 5px;
+        font-size: 14px;            /* This won't work in Chrome or Safari */
+      }
+      .form-row textarea {
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 14px;
+      
+        border: 1px solid #D6D9DC;
+        border-radius: 3px;
+      
+        min-height: 200px;
+        margin-bottom: 10px;
+        padding: 7px;
+        resize: none;
+      }
+      
+      .form-row .instructions {
+        color: #999999;
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+.checkbox-label input[type='checkbox'] {
+    margin: 2px 5px 0 0;
+}
+
+
+@media only screen and (min-width:700px) {
+    .speaker-form-header,
+    .speaker-form {
+      width: 600px;
+    }
+    .form-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .form-row input[type='text'],.form-row select, .form-row input[type='email'] {
+        width: 250px;
+        height: initial;
+      }
+      .form-row label  {
+        text-align: right;
+        width: 120px;
+        margin-top: 7px;
+        padding-right: 20px;
+      }
+      .legacy-form-row legend {
+          padding-right: 20px;
+          width: 120px;
+        text-align: right;
+        float: left;
+      }
+    .form-row .instructions {
+        margin-left: 120px;
+    }
+    .form-row textarea {
+        width: 350px;
+    }
+    .form-row .checkbox-label {
+        margin-left: 120px;
+        width: auto;
+    }
+    .form-row button {
+        margin-left: 120px;
+    }
+}
