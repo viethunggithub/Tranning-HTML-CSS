@@ -48,6 +48,15 @@ body {
     display: none;
 }
 
+.w-container a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.w-container .icon:hover {
+    opacity: 1;
+}
+
 
 /* main-first */
 
@@ -139,7 +148,7 @@ body {
 
 .parters_column>div {
     font-size: 96px;
-    font-family: "Canela", Georgia, sans-serif;
+    font-family: 'Shippori Mincho B1', serif;
     color: #1f1e2c;
 }
 
@@ -330,6 +339,62 @@ form>button {
     letter-spacing: 0.2em;
     font-size: 10px;
     font-weight: 800;
+}
+
+
+/* .contactUs {
+    position: fixed;
+    bottom: 20px;
+    width: 280px;
+} */
+
+.contactUs .textQuestion {
+    background-color: white;
+    padding: 18px 18px 0px;
+    border-radius: 5px;
+    border: 1px solid white;
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+}
+
+.textQuestion p {
+    width: 210px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.textQuestion::before {
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent transparent white;
+    position: absolute;
+    right: -19px;
+    bottom: 25px;
+}
+
+.textQuestion i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.contactUs>i {
+    font-size: 30px;
+    border: 1px solid #d6c7c2;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding-bottom: 10px;
+    box-shadow: 2px 5px 5px 1px gray;
+    background-color: #f4eeed;
 }
 
 

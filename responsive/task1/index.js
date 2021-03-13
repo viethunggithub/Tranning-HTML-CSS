@@ -5,7 +5,7 @@ $(function() {
     })
     $(window).resize(function() {
         var size_windown = $(window).width();
-        if (size_windown >= 700) {
+        if (size_windown >= 992) {
             $(".w-container > a").show();
         }
     })
