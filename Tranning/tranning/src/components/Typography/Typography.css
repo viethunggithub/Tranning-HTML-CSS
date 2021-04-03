@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.typography {
+    margin: 0 240px;
+}
+
+.headings {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headings_tag {
+    font-size: 14px;
+    color: #f3a4b5;
+    margin-top: 5px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+.headings_text h1,
+.headings_text h2,
+.headings_text h3,
+.headings_text h4,
+.headings_text h5,
+.headings_text h6 {
+    margin: 0 0 15px;
+    font-size: 40px;
+    font-family: inherit;
+    font-weight: 400;
+    color: #32325d;
+}
+
+.headings_text h2 {
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+.headings_text h3 {
+    font-size: 28px;
+    padding-top: 8px;
+}
+
+.headings_text h4 {
+    font-size: 24px;
+    padding-top: 8px;
+}
+
+.headings_text h5 {
+    font-size: 20px;
+    padding-top: 8px;
+}
+
+.headings_text h6 {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.tags * {
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #32325d;
+}
+
+.tags h2 {
+    font-size: 32px;
+}
+
+.tags h3 {
+    font-size: 28px;
+}
+
+.tags h4 {
+    font-size: 24px;
+}
+
+.tags h5 {
+    font-size: 20px;
+}
+
+.tags h6 {
+    font-size: 16px;
+}
+
+.display {
+    font-family: Open Sans, sans-serif;
+    font-weight: 600;
+    color: #525f7f;
+    width: 100%;
+}
+
+.display tr {
+    border-top: 1px solid #dee2e6;
+}
+
+.display tr:first-child td {
+    font-size: 52.8px;
+    padding: 16px;
+}
+
+.display tr:nth-child(2) td {
+    font-size: 44px;
+    padding: 16px;
+}
+
+.display tr:nth-child(3) td {
+    font-size: 35px;
+    padding: 16px;
+}
+
+.display tr:last-child td {
+    font-size: 26.04px;
+    padding: 16px;
+}
+
+.inline p {
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    color: #8898aa;
+    opacity: 0.9;
+    margin: 0 0 16px;
+}
+
+.inline p:first-child,
+.inline p:nth-child(2) {
+    text-decoration: line-through;
+}
+
+.inline p:nth-child(3),
+.inline p:nth-child(4) {
+    text-decoration: underline;
+}
+
+.inline p:nth-child(5) {
+    font-size: 12.8px;
+    font-weight: 400;
+}
+
+.inline p:nth-child(6) {
+    font-weight: bolder;
+}
+
+.inline p:last-child {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.abbre {
+    color: #8898aa;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.abbre p {
+    margin: 0 0 16px;
+}
+
+.abbre p:first-child {
+    text-decoration: underline dotted;
+}
+
+.abbre p:last-child {
+    text-decoration: underline dotted;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.lists {
+    color: #8898aa;
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.lists li {
+    list-style: none;
+}
+
+.lists_sub li {
+    list-style: outside;
+    margin-left: 40px;
+}
+
+.description {
+    font-family: Open Sans, sans-serif;
+    font-size: 16px;
+    color: #525f7f;
+    opacity: 0.9;
+}
+
+.description th,
+.description td {
+    padding: 0 15px;
+    text-align: left;
+}
+
+.description td {
+    padding-bottom: 10px;
+}
+
+.description td p {
+    font-style: normal;
+    opacity: 0.7;
+}
