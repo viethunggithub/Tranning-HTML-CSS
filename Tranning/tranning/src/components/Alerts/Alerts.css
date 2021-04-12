@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Alerts {
+    margin: 0 240px;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+}
+
+.Alerts_item {
+    padding: 16px 24px;
+    margin: 0 0 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    border-radius: .25rem;
+    color: #ffffff;
+}
+
+.link_color {
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px dotted hsla(0, 0%, 100%, .5);
+}
+
+.link_color:hover {
+    color: #fff;
+    text-decoration: none;
+}

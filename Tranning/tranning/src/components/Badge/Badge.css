@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Badge {
+    margin: 0 240px;
+}
+
+.notification {
+    font-size: 14px;
+    padding: 10px 20px;
+    font-family: inherit;
+    display: flex;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5e72e4;
+    border-color: #5e72e4;
+    letter-spacing: .025em;
+    justify-content: space-evenly;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+    border-radius: .25rem;
+    width: 175px;
+    height: 45px;
+    align-items: center;
+    opacity: 0.85;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+@keyframes ani {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -1.5px);
+    }
+}
+
+.notification:hover {
+    opacity: 1;
+    animation: ani .25s ease forwards;
+}
+
+.notification p {
+    text-transform: uppercase;
+    padding-top: 6px;
+}
+
+.notification .icon {
+    color: #fff;
+    background-color: #172b4d;
+    font-size: 9.24px;
+    font-family: Open Sans, sans-serif;
+    width: 18.5px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+}
+
+.Badge span,
+.Badge a {
+    font-size: 10.56px;
+    font-weight: 650;
+    line-height: 1;
+    text-align: center;
+    padding: 5px 6px;
+    color: #ffffff;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    background-color: #5e72e4;
+    white-space: nowrap;
+    margin: 0 2px;
+    opacity: 0.9;
+}
+
+.Badge_context {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Badge a:hover {
+    text-decoration: none;
+    opacity: 1;
+}

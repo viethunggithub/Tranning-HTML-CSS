@@ -6,6 +6,12 @@ import NotFound from './pages/NotFound'
 import Colors from './components/Color/Colors'
 import Gird from './components/Gird/Gird'
 import Typography from './components/Typography/Typography'
+import Alerts from './components/Alerts/Alerts'
+import Badge from './components/Badge/Badge'
+import Breadcrumb from './components/Breadcrumb/Breadcrumb'
+import Buttons from './components/Buttons/Buttons'
+import Carousel from  './components/Carousel/Carousel'
+import Dropdowns from  './components/Dropdowns/Dropdowns'
 
 class App extends React.Component {
     render() {
@@ -28,6 +34,12 @@ class App extends React.Component {
                     <Route path="/Colors" component={Colors} />
                     <Route path="/Gird" component={Gird} />
                     <Route path="/Typography" component={Typography} />
+                    <Route path="/Alerts" component={Alerts} />
+                    <Route path="/Badge" component={Badge} />
+                    <Route path="/Breadcrumb" component={Breadcrumb} />
+                    <Route path="/Buttons" component={Buttons} />
+                    <Route path="/Carousel" component={Carousel} />
+                    <Route path="/Dropdowns" component={Dropdowns} />
                     <Route path="/" component={NotFound} />
                 </Switch>
             </Router>

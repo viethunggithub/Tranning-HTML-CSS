@@ -5,9 +5,15 @@ class Result extends React.Component {
     render() {
         return (
             <div className="result">
-                <Link to="/Colors">Colors</Link><br />
-                <Link to="/Gird">Gird</Link><br />
+                <Link to="/Colors">Colors</Link>
+                <Link to="/Gird">Gird</Link>
                 <Link to="/Typography">Typography</Link>
+                <Link to="/Alerts">Alerts</Link>
+                <Link to="/Badge">Badge</Link>
+                <Link to="/Breadcrumb">Breadcrumb</Link>
+                <Link to="/Buttons">Buttons</Link>
+                <Link to="/Carousel">Carousel</Link>
+                <Link to="/Dropdowns">Dropdowns</Link>
             </div>
         )
     }
