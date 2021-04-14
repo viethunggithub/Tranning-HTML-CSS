@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Modal {
+    margin: 0 240px;
+    font-family: Open Sans, sans-serif;
+}
+
+.Modal>button {
+    padding: 10px 20px;
+    background-color: #5e72e4;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    font-weight: 600;
+    opacity: 0.8;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #5e72e4;
+}
+
+.Modal>button:hover {
+    animation: modal 0.25s ease forwards;
+    opacity: 1;
+}
+
+@keyframes modal {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -1px);
+    }
+}
+
+.modal_body,
+.modal_scroll,
+.modal_tool {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 3000;
+}
+
+.modal_alert {
+    display: none;
+    position: absolute;
+    margin: 20px 32%;
+    height: 250px;
+    width: 500px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    border-radius: 5px;
+    font-family: Open Sans, sans-serif;
+}
+
+.modal_scoll_alert,
+.modal_tool_pop {
+    display: block;
+    position: absolute;
+    margin: 20px 32%;
+    width: 500px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    border-radius: 5px;
+    font-family: Open Sans, sans-serif;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    color: #525f7f;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal_header>h5,
+.modal_middle h5 {
+    font-size: 20px;
+    letter-spacing: 0.05rem;
+    margin: 0;
+}
+
+.modal_header>i {
+    padding-top: 5px;
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.modal_middle {
+    padding: 24px;
+    color: #525f7f;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal_middle>p {
+    font-size: 16px;
+    margin: 0 0 16px;
+    opacity: 0.8;
+}
+
+.modal_footer {
+    padding: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal_footer>button,
+.modal_middle button {
+    font-size: 14px;
+    margin: 0 10px 0 0;
+    padding: 10px 20px;
+    color: #212529;
+    border-radius: 5px;
+    outline: none;
+    font-weight: 600;
+    opacity: 0.8;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+.modal_footer button:first-child,
+.modal_middle button {
+    background-color: #f4f5f9;
+    border: 1px solid #f4f5f9;
+}
+
+.modal_footer button:last-child {
+    background-color: #5e72e4;
+    border: 1px solid #5e72e4;
+    color: #ffffff;
+}
+
+.modal_footer button:hover,
+.modal_middle button:hover {
+    animation: modal 0.15s ease forwards;
+    opacity: 1;
+}
+
+.modal_footer button:first-child:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal_middle p {
+    font-weight: 300px;
+    position: relative;
+}
+
+.modal_tool_pop .modal_middle h5 {
+    margin-bottom: 10px;
+}
+
+.modal_middle {
+    margin-top: 5px;
+}
+
+.modal_middle a {
+    position: relative;
+}
+
+.modal_middle a>span {
+    display: none;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    background-color: black;
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    top: -40px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.modal_middle a>span::after {
+    content: "";
+    width: 10px;
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    bottom: -17px;
+    left: 20px;
+}
+
+.modal_middle a:hover {
+    text-decoration: none;
+}
+
+.modal_middle_btn {
+    display: none;
+    top: -30px;
+    left: 146px;
+    position: absolute;
+    width: 275px;
+    height: 115px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 2rem 0 rgb(0 0 0 / 20%)
+}
+
+.modal_middle_btn h5 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #32325d;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.modal_middle_btn p {
+    font-size: 14px;
+    padding: 12px;
+    text-align: left;
+}
+
+.modal_middle_btn::after {
+    content: "";
+    border: 15px solid;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    top: 35px;
+    left: -28px;
+}

@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Forms {
+    margin: 0 240px;
+}
+
+.Forms_main,
+.textarea,
+.checkboxes,
+.toggle_btn {
+    color: #525f7f;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    padding: 20px;
+    width: 100%;
+    background-color: #f5f7f9;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 300px;
+    position: relative;
+}
+
+.form_input {
+    border: 1px solid #cad1d7;
+    border-radius: 5px;
+    color: #8898aa;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 46%;
+    margin: 0 15px 20px 15px;
+    background-color: #ffff;
+    height: 42px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form_input input {
+    outline: none;
+    line-height: 40px;
+    border: none;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.Forms_main input:focus {
+    outline: none;
+}
+
+.Forms_main input::placeholder {
+    color: #8898aa;
+    opacity: 0.6;
+}
+
+.Forms_main .form_input:nth-child(5) input::placeholder {
+    color: #2dce89;
+}
+
+.Forms_main .form_input:last-child input::placeholder {
+    color: #fb6340;
+}
+
+.form_input i {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    color: #2dce89;
+    font-size: 18px;
+}
+
+.form_input:last-child i {
+    color: #fb6340;
+}
+
+.form_input:nth-child(3) i,
+.form_input:nth-child(4) i {
+    color: #c7c7c7;
+    font-size: 14px;
+}
+
+.form_input:nth-child(3) i {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+.form_input:nth-child(3) input {
+    margin-left: 40px;
+}
+
+.form_input:nth-child(2) input:disabled {
+    background-color: #e9ecef;
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 10px;
+}
+
+.textarea textarea {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.textarea textarea:focus {
+    outline: none;
+}
+
+.textarea textarea::placeholder {
+    color: #cbd0d5;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox_a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 16px;
+    color: #525f7f;
+    margin: 5px;
+}
+
+label {
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.checkbox_a input {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.toggle_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.toggle,
+.toggle1 {
+    height: 25px;
+    width: 60px;
+    border-radius: 40px;
+    position: relative;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.toggle span,
+.toggle1 span {
+    height: 21px;
+    width: 21px;
+    border: 1px solid #dddddd;
+    background-color: #dddddd;
+    position: absolute;
+    border-radius: 100%;
+    top: 1px;
+    margin-left: 1px;
+    /* left: 3px; */
+    /* right: 3px; */
+}

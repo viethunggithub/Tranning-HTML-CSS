@@ -12,6 +12,10 @@ import Breadcrumb from './components/Breadcrumb/Breadcrumb'
 import Buttons from './components/Buttons/Buttons'
 import Carousel from  './components/Carousel/Carousel'
 import Dropdowns from  './components/Dropdowns/Dropdowns'
+import Forms from './components/Forms/Forms'
+import Images from './components/Images/Images'
+import Modal from './components/Modal/Modal'
+import Navs from './components/Navs/Navs'
 
 class App extends React.Component {
     render() {
@@ -40,6 +44,10 @@ class App extends React.Component {
                     <Route path="/Buttons" component={Buttons} />
                     <Route path="/Carousel" component={Carousel} />
                     <Route path="/Dropdowns" component={Dropdowns} />
+                    <Route path="/Forms" component={Forms} />
+                    <Route path="/Images" component={Images} />
+                    <Route path="/Modal" component={Modal} />
+                    <Route path="/Navs" component={Navs} />
                     <Route path="/" component={NotFound} />
                 </Switch>
             </Router>

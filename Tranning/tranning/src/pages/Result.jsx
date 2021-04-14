@@ -14,6 +14,10 @@ class Result extends React.Component {
                 <Link to="/Buttons">Buttons</Link>
                 <Link to="/Carousel">Carousel</Link>
                 <Link to="/Dropdowns">Dropdowns</Link>
+                <Link to="/Forms">Forms</Link>
+                <Link to="/Images">Images</Link>
+                <Link to="/Modal">Modal</Link>
+                <Link to="/Navs">Navs</Link>
             </div>
         )
     }
