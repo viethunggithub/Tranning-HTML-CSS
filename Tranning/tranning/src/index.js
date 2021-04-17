@@ -15,6 +15,12 @@ import './components/Forms/Forms.css'
 import './components/Images/Images.css'
 import './components/Modal/Modal.css'
 import './components/Navs/Navs.css'
+import './components/Navbar/Navbar.css'
+import './components/Pagination/Pagination.css'
+import './components/Popovers/Popovers.css'
+import './components/Progress/Progress.css'
+import './components/Tables/Tables.css'
+import './components/Tooltips/Tooltips.css'
 
 ReactDOM.render( 
 <React.StrictMode ><App / ></React.StrictMode>,

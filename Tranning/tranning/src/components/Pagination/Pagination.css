@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Pagination {
+    margin: 0 240px;
+}
+
+.Pagination_main {
+    color: #525f7f;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    padding: 30px;
+    width: 100%;
+    background-color: #f5f7f9;
+    border-radius: 5px;
+    margin-bottom: 300px;
+    display: flex;
+}
+
+.Pagination_main span {
+    border: 1px solid #dee2e6;
+    background-color: #ffffff;
+    color: #a8a8a8;
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    line-height: 35px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.Pagination_main span:hover {
+    background-color: #dee2e6;
+    color: #a8a8a8;
+}
+
+.Pag_disable span:nth-child(3) {
+    background-color: #5e72e4;
+    color: #ffffff;
+}
+
+.Pag_size1 span {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.Pag_size1 span:last-child {
+    background-color: #5e72e4;
+    color: #ffffff;
+}
+
+.Pag_size2 span:last-child {
+    background-color: #5e72e4;
+    color: #ffffff;
+}
+
+.Pag_size2 span {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.Pag_align {
+    justify-content: center;
+}
+
+.Pag_align span:first-child,
+.Pag_size2 span:first-child,
+.Pag_size1 span:first-child,
+.Pag_disable span:first-child {
+    cursor: initial;
+}
+
+.Pag_align span:first-child:hover,
+.Pag_size2 span:first-child:hover,
+.Pag_size1 span:first-child:hover,
+.Pag_disable span:first-child:hover {
+    background-color: #ffffff;
+}
+
+.Pag_right {
+    justify-content: flex-end;
+}

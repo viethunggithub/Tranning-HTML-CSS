@@ -77,7 +77,7 @@ class Buttons extends React.Component {
                 <Buttons_class btn={btn8} />
                 <Buttons_class btn={btn9} />
                 <Buttons_class btn={btn10} />
-                <Buttons_class btn={btn11} hasss="1" />
+                <Buttons_class btn={btn11} hasss="1" textx="1"/>
                 <Buttons_class btn={btn12} hass="1" />
                 <h2>Sizes</h2>
                 <Buttons_class btn={btn13} have="1" />

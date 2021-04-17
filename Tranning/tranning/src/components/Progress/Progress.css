@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Progress {
+    margin: 0 240px;
+}
+
+.Progress_main {
+    color: #525f7f;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    padding: 20px;
+    width: 100%;
+    background-color: #f5f7f9;
+    border-radius: 5px;
+    margin-bottom: 300px;
+}
+
+.Pro_main {
+    padding: 24px 0;
+}
+
+.Progress_main p {
+    color: #172b4d;
+    padding: 4px 0;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.Progress_main strong {
+    color: #8898aa;
+    font: 14px;
+    text-align: right;
+    display: block;
+}
+
+.Progress_main .Pro_total {
+    background-color: #e9ecef;
+    width: 100%;
+    height: 9px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.Progress_main .Pro_sub {
+    /* background-color: green; */
+    width: 60%;
+    height: 9px;
+}

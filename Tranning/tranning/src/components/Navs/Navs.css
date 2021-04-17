@@ -10,10 +10,11 @@
 
 .Navs_main,
 .Navs_circle,
-.Navs_taps {
+.Navs_taps,
+.Navs_just {
     font-size: 14px;
     font-family: Open Sans, sans-serif;
-    /* padding: 20px; */
+    padding: 20px;
     width: 100%;
     background-color: #f5f7f9;
     border-radius: 5px;
@@ -124,4 +125,51 @@
 
 .Navs_taps {
     position: relative;
+}
+
+.Navs_just {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
+}
+
+.Navs_just_left,
+.Navs_just_right {
+    font-family: Open Sans, sans-serif;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 15px 0 0;
+}
+
+.Navs_just_left_right {
+    margin: 0 20px;
+}
+
+.Navs_just p {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: #525f7f;
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 0.05rem;
+    opacity: 0.8;
+}
+
+.Navs_just_right_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.Navs_just_right {
+    display: flex;
+    flex-direction: column;
+}
+
+.text_left_2,
+.text_bottom_2,
+.text_bottom_3 {
+    display: none;
 }

@@ -16,6 +16,12 @@ import Forms from './components/Forms/Forms'
 import Images from './components/Images/Images'
 import Modal from './components/Modal/Modal'
 import Navs from './components/Navs/Navs'
+import Navbar from './components/Navbar/Navbar'
+import Pagination from './components/Pagination/Pagination'
+import Popovers from './components/Popovers/Popovers'
+import Progress from './components/Progress/Progress'
+import Tables from './components/Tables/Tables'
+import Tooltips from './components/Tooltips/Tooltips'
 
 class App extends React.Component {
     render() {
@@ -48,6 +54,12 @@ class App extends React.Component {
                     <Route path="/Images" component={Images} />
                     <Route path="/Modal" component={Modal} />
                     <Route path="/Navs" component={Navs} />
+                    <Route path="/Navbar" component={Navbar} />
+                    <Route path="/Pagination" component={Pagination} />
+                    <Route path="/Popovers" component={Popovers} />
+                    <Route path="/Progress" component={Progress} />
+                    <Route path="/Tables" component={Tables} />
+                    <Route path="/Tooltips" component={Tooltips} />
                     <Route path="/" component={NotFound} />
                 </Switch>
             </Router>

@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Tooltips {
+    margin: 0 240px;
+}
+
+.Too_main {
+    color: #525f7f;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    padding: 20px;
+    width: 100%;
+    background-color: #f5f7f9;
+    border-radius: 5px;
+    margin-bottom: 300px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Too_main button {
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin: 8px 12px 8px 0;
+    padding: 4px 8px;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 5px;
+    outline: none;
+    background-color: red;
+    border: 1px solid red;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.Too_main button:hover {
+    opacity: 1;
+    animation: too 0.05s ease forwards;
+}
+
+@keyframes too {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -1px);
+    }
+}

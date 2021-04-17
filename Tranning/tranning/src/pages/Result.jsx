@@ -18,6 +18,12 @@ class Result extends React.Component {
                 <Link to="/Images">Images</Link>
                 <Link to="/Modal">Modal</Link>
                 <Link to="/Navs">Navs</Link>
+                <Link to="/Navbar">Navbar</Link>
+                <Link to="/Pagination">Pagination</Link>
+                <Link to="/Popovers">Popovers</Link>
+                <Link to="/Progress">Progress</Link>
+                <Link to="/Tables">Tables</Link>
+                <Link to="/Tooltips">Tooltips</Link>
             </div>
         )
     }

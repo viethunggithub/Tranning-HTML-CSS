@@ -48,8 +48,71 @@ class Navs extends React.Component {
                     </div>
                 </div>
                 <h2>Just Icons</h2>
+                <div className="Navs_just">
+                    <div className="Navs_just_left">
+                        <div className="Navs_just_left_left">
+                            <div className="Navs_circle_sub icon1" onClick={() => { this.onShowText_left("text_left_1", "text_left_2", "icon1", "icon2") }}>
+                                <i className="fas fa-atom"></i>
+                            </div>
+                            <div className="Navs_circle_sub icon2" onClick={() => { this.onShowText_left("text_left_2", "text_left_1", "icon2", "icon1") }}>
+                                <i className="fas fa-comment"></i>
+                            </div>
+                        </div>
+                        <div className="Navs_just_left_right text_left_1">
+                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.</p>
+                            <p>Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                        </div>
+                        <div className="Navs_just_left_right text_left_2">
+                            <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+                        </div>
+                    </div>
+                    <div className="Navs_just_right">
+                        <div className="Navs_just_right_top">
+                            <div className="Navs_circle_sub icon1" onClick={() => { this.onShowText_bottom("icon1", "text_bottom_1", "text_bottom_2", "text_bottom_3") }}>
+                                <i className="fas fa-atom"></i>
+                            </div>
+                            <div className="Navs_circle_sub icon2" onClick={() => { this.onShowText_bottom("icon2", "text_bottom_2", "text_bottom_1", "text_bottom_3") }}>
+                                <i className="fas fa-comment"></i>
+                            </div>
+                            <div className="Navs_circle_sub icon3" onClick={() => { this.onShowText_bottom("icon3", "text_bottom_3", "text_bottom_2", "text_bottom_1") }}>
+                                <i className="fas fa-cloud-download-alt"></i>
+                            </div>
+                        </div>
+                        <div className="Navs_just_right_bottom text_bottom_1">
+                            <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.</p>
+                            <p>Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                        </div>
+                        <div className="Navs_just_right_bottom text_bottom_2">
+                            <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+                        </div>
+                        <div className="Navs_just_right_bottom text_bottom_3">
+                            <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.</p>
+                            <p>Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
+    }
+    onShowText_bottom = (a, x, y, z) => {
+        for (var i = 1; i <= 3; i++) {
+            var b = i + 1 > 3 ? 2 : i + 1
+            var c = i + 2 > 3 ? 1 : i + 2
+            if (a == `icon${i}`) {
+                $(".Navs_just_right_top").find(`.icon${i}`).find("i").attr("style", "background: #5e72e4;color:#ffffff;border-color:#5e72e4")
+                $(".Navs_just_right_top").find(`.icon${b},.icon${c}`).find("i").attr("style", "background: #ffffff;color:#5e72e4;border-color:#ffffff")
+            }
+        }
+        $(`.${z},.${y}`).hide()
+        $(`.${x}`).show()
+    }
+    onShowText_left = (a, b, c, d) => {
+        $(`.${a}`).show();
+        $(`.${b}`).hide();
+        $(".Navs_just_left_left").find(`.${c}`).find("i").attr("style", "background: #5e72e4;color:#ffffff;border-color:#5e72e4")
+        $(".Navs_just_left_left").find(`.${d}`).find("i").attr("style", "background: #ffffff;color:#5e72e4;border-color:#ffffff")
     }
     onNavsTap = (a) => {
         for (var i = 1; i <= 3; i++) {

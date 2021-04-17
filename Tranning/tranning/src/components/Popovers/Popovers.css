@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Popovers {
+    margin: 0 240px;
+}
+
+.Popovers_main {
+    color: #525f7f;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    padding: 20px;
+    width: 100%;
+    background-color: #f5f7f9;
+    border-radius: 5px;
+    margin-bottom: 300px;
+    border: 1px solid #d5d7dd;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.Popovers_main button {
+    color: #ffffff;
+    background-color: #172b4d;
+    font-size: 14px;
+    margin: 8px 12px 8px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    letter-spacing: .025em;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    border: 1px solid #172b4d;
+}
+
+.Popovers_main button:hover {
+    animation: popover 0.05s ease forwards;
+    background-color: black;
+    z-index: 1;
+}
+
+@keyframes popover {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -1px);
+    }
+}
+
+.pop_top,
+.pop_btn_end {
+    display: none;
+    z-index: 300;
+    height: 65px;
+    width: 275px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    box-shadow: 0 0.5rem 2rem 0 rgb(0 0 0 / 20%)
+}
+
+.pop_top p,
+.pop_btn_end p {
+    font-size: 14px;
+    padding: 12px;
+    color: #525f7f;
+    opacity: 0.9;
+    text-align: left;
+    font-weight: 300;
+}
+
+.pop_btn_end {
+    top: -80px;
+    left: -50px;
+}
+
+
+/*
+.pop_btn_end2 {
+    bottom: -235px;
+    left: 415px;
+}
+
+.pop_btn_end3 {
+    bottom: -235px;
+    left: 580px;
+}
+
+.pop_btn_end4 {
+    bottom: -235px;
+    left: 770px;
+}
+
+.pop_btn_end5 {
+    bottom: -135px;
+    left: 200px;
+}
+*/
+
+.pop_btn_end::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+
+/* .pop_btn_end4 {
+    display: block;
+} */
+
+
+/* .pop_btn_end3::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+.pop_btn_end4::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+.pop_btn_end5::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+.pop_btn_end6::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+.pop_btn_end7::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+}
+
+.pop_btn_end1::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -28px;
+    left: 125px;
+} */
+
+.pop_top1 {
+    top: -80px;
+    left: -45px;
+}
+
+.pop_top2 {
+    top: -15px;
+    left: 200px;
+}
+
+.pop_top3 {
+    bottom: -80px;
+    left: -40px;
+}
+
+.pop_top4 {
+    top: -15px;
+    left: -287px;
+}
+
+.pop_top3::after {
+    content: "";
+    border: 15px solid;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    top: -29px;
+    left: 125px;
+}
+
+.pop_top4::after {
+    content: "";
+    border: 15px solid;
+    border-color: transparent transparent transparent #ffffff;
+    position: absolute;
+    top: 15px;
+    right: -27px;
+}
+
+.pop_top2::after {
+    content: "";
+    border: 15px solid;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    bottom: 16px;
+    left: -27px;
+}
+
+.pop_top1::after {
+    content: "";
+    border: 15px solid;
+    border-color: #ffffff transparent transparent transparent;
+    position: absolute;
+    bottom: -29px;
+    left: 120px;
+}
+
+.pop_var button {
+    opacity: 0.9;
+}
+
+.pop_var button:hover {
+    opacity: 1;
+}
