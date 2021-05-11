@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: white;
+}
+
+.mainGame {
+    margin: 50px;
+    height: 550px;
+    position: relative;
+    border: 1px solid black;
+    background-image: url("./imgs/RC01.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 550px;
+}
+
+.SD {
+    position: absolute;
+    top: 50px;
+    height: 300px;
+    width: 300px;
+}
+
+.a img {
+    height: 67.74px;
+    width: 80px;
+    margin: 100px 0px 0px 200px;
+    filter: saturate(3);
+}
+
+.nhacNen {
+    position: absolute;
+    bottom: 0px;
+    left: 40%;
+}
+
+.danBay {
+    position: absolute;
+    height: 8px;
+    width: 40px;
+    z-index: 3000;
+}
+
+.roundNumber {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0px;
+    color: yellow;
+    left: 93%;
+}
+
+.S {
+    position: absolute;
+    z-index: 4000;
+    height: 25px;
+    width: 40.5px;
+    top: 50px;
+}
+
+strong {
+    position: absolute;
+    top: 0px;
+    left: 85%;
+    color: yellow;
+}
+
+.sungGun {
+    height: 50px;
+    width: 10px;
+    position: absolute;
+    left: 2px;
+    top: 0px;
+}
+
+.bulletGun {
+    color: yellow;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-weight: 600;
+}
+
+.bullet {
+    height: 30px;
+}
+
+.fa-heart {
+    font-size: 28px;
+    position: absolute;
+    top: 0px;
+    color: #CC0000;
+}
+
+.life i:first-child {
+    left: 50%;
+}
+
+.life i:nth-child(2) {
+    left: 52.5%;
+}
+
+.life i:nth-child(3) {
+    left: 55%;
+}
+
+.ZB {
+    height: 110px;
+    width: 90px;
+    position: absolute;
+    right: 50px;
+    /* border: 1px solid red; */
+}
+
+.alertTheEnd {
+    height: 400px;
+    width: 600px;
+    background-color: #FFCC00;
+    position: absolute;
+    left: 27%;
+    top: 13%;
+    z-index: 1000;
+    border-radius: 50px;
+    display: none;
+}
+
+.tableSort {
+    height: 400px;
+    width: 600px;
+    background-color: #FFFFCC;
+    position: absolute;
+    left: 27%;
+    top: 13%;
+    z-index: 2000;
+    display: none;
+    overflow: scroll;
+    border-radius: 5px;
+}
+
+.tableSort table tr th {
+    color: blue;
+    text-align: center;
+}
+
+.deleteUser {
+    color: red;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.alertTheEnd h2 {
+    color: red;
+    font-size: 52px;
+    text-align: center;
+}
+
+.alertTheEnd strong {
+    position: absolute;
+    top: 30%;
+    left: 32%;
+    color: rgb(231, 49, 49);
+    font-size: 32px;
+}
+
+.saveUser {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+}
+
+.saveUser label {
+    color: green;
+    font-size: 24px;
+}
+
+.save {
+    position: absolute;
+    top: 100%;
+    left: 70%;
+}
+
+.choiLai {
+    position: absolute;
+    top: 100%;
+    left: 35%;
+}
+
+.action {
+    position: absolute;
+    bottom: 50px;
+    left: 42%;
+    display: none;
+}
+
+.action button {
+    color: black;
+}
+
+.DC {
+    height: 30px;
+    width: 41.38px;
+    position: absolute;
+    top: 100px;
+}
+
+.heartDrop {
+    position: absolute;
+    top: 100px;
+}
+
+.total {
+    height: 18px;
+    width: 200px;
+    position: absolute;
+    top: 3px;
+    border-radius: 10px;
+    left: 45%;
+    border: 1px solid red;
+    overflow: hidden;
+}
+
+.detail {
+    height: 18px;
+    background-color: red;
+    position: absolute;
+    width: 100%;
+}
+
+.mana {
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: 42%;
+    color: red;
+    margin-top: 1px;
+    top: 0px;
+}
+
+.ZB_MAX {
+    position: absolute;
+    bottom: 100px;
+    z-index: 3000;
+    height: 180px;
+    width: 140px;
+    /* border: 1px solid red; */
+    right: 100px;
+}
+
+.VR {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    z-index: 3100;
+}
+
+.DL {
+    position: absolute;
+    top: 100px;
+    z-index: 3000;
+    height: 40px;
+}
+
+.LD_nem {
+    height: 40px;
+    width: 22.87px;
+    position: absolute;
+    /* border: 1px solid red; */
+}
+
+.LD {
+    height: 40px;
+    width: 22.87px;
+    position: absolute;
+}
+
+.icon_luuDan {
+    height: 40px;
+    width: 22.87px;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+
+.icon_daChan {
+    height: 40px;
+    width: 22.87px;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+
+.luuDan_SL {
+    position: absolute;
+    left: 130px;
+    top: 15px;
+    color: yellow;
+    font-weight: bold;
+}
+
+.TL_No,
+.NemB_No,
+.No_TL_XT {
+    position: absolute;
+    z-index: 3000;
+    height: 200px;
+    /* border: 1px solid red; */
+    width: 202px;
+}
+
+.chayMau {
+    position: absolute;
+    height: 20px;
+}
+
+.mana_Vat,
+.mana_Vat_DiaBay {
+    border: 1px solid #333333;
+    height: 5px;
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.mana {
+    border: 1px solid #333333;
+    height: 5px;
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.mana_Vat_DiaBay {
+    width: 150px;
+}
+
+.mana_Vat_Max {
+    border: 1px solid #333333;
+    height: 5px;
+    width: 300px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.mana_Rest {
+    height: 5px;
+}
+
+.MB_TL {
+    position: absolute;
+    z-index: 3000;
+    height: 100px;
+    width: 286px;
+    /* border: 1px solid red; */
+}
+
+.dich_TL {
+    position: absolute;
+    z-index: 3000;
+    /* right: 180px;
+    bottom: 180px; */
+}
+
+.MB_NB {
+    position: absolute;
+    z-index: 3000;
+    height: 90px;
+    top: 50px;
+    width: 291px;
+}
+
+.B {
+    position: absolute;
+    z-index: 3000;
+    height: 80px;
+    /* border: 1px solid red; */
+}
+
+.BN {
+    position: absolute;
+    z-index: 3000;
+    height: 200px;
+    /* border: 1px solid red; */
+}
+
+.TA_TL {
+    position: absolute;
+    z-index: 3000;
+    height: 8px;
+}
+
+.tenLua_SL {
+    position: absolute;
+    top: 15px;
+    left: 240px;
+    color: yellow;
+    font-weight: 600;
+}
+
+.icon_TA_TL {
+    height: 50px;
+    width: 10px;
+    position: absolute;
+    top: 0px;
+    left: 220px;
+}
+
+.TL_FLY_RIGHT {
+    position: absolute;
+    z-index: 3000;
+    height: 13px;
+}
+
+.TL_FLY_TOP {
+    position: absolute;
+    z-index: 3000;
+    width: 13px;
+}
+
+.MB_MAX {
+    position: absolute;
+    z-index: 3000;
+    /* border: 1px solid red; */
+    height: 92px;
+    width: 265px;
+}
+
+.icon_XT {
+    position: absolute;
+    z-index: 3000;
+    height: 50px;
+}
+
+.XT_TA {
+    position: absolute;
+    z-index: 3000;
+    height: 100px;
+    width: 229px;
+}
+
+.tenLua_XT {
+    position: absolute;
+    height: 10px;
+    top: 502px;
+    left: 300px;
+    z-index: 3000;
+}
+
+.tenLua_XT_No {
+    position: absolute;
+    z-index: 3010;
+    height: 90px;
+    top: 455px;
+    left: 300px;
+}
+
+.DB {
+    position: absolute;
+    z-index: 3000;
+    height: 50px;
+    width: 100px;
+}
+
+.NHT {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.daoChem {
+    position: absolute;
+    height: 150px;
+    z-index: 3;
+}
+
+.vatCan {
+    position: absolute;
+    z-index: 3;
+    height: 100px;
+    width: 66.27px;
+}

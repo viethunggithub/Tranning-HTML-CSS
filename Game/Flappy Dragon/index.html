@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <!-- <link rel="stylesheet" href="main.css"> -->
+
+    <script src="./class.js"></script>
+    <script src="./fun&val.js"></script>
+    <script src="./callback.js"></script>
+    <script src="./functions_Chung.js"></script>
+    <script src="./main.js"></script>
+
+    <script src="./control.js"></script>
+    <script src="./saveUser.js"></script>
+</head>
+
+<body>
+    <audio class="nhacNen" controls autoplay loop>
+        <source src="./mp3/VXBN.mp3" type="audio/mpeg">
+    </audio>
+    <div class="mainGame">
+        <!-- bird -->
+        <div class="a">
+            <img class="bird" src="./imgs/RONG01.gif" />
+        </div>
+
+        <!-- round -->
+        <div class="roundNumber">
+            <b>ROUND 1</b>
+        </div>
+
+        <!-- Điểm số -->
+        <div class="score">
+            <strong>Score: <b>0</b></strong>
+        </div>
+
+        <!-- Mana của bird -->
+        <div class="total" mana="9000">
+            <div class="detail" detail="0"></div>
+        </div>
+
+
+        <!-- Nơi đặt vũ khí của bird -->
+        <div class="showGunDetail">
+            <img class="sungGun" src="./imgs/DAN02.png" alt="">
+            <div class="bulletGun" data="0">0 bullet</div>
+        </div>
+        <div class="showLDDetail">
+            <img class="icon_luuDan" src="./imgs/LUUDAN01.png" alt="">
+            <div class="luuDan_SL" data="0">0 grenade</div>
+        </div>
+        <div class="showTLDetails">
+            <img class="icon_TA_TL" src="./imgs/TENLUA11.png" alt="">
+            <div class="tenLua_SL" data="0">0 rocket</div>
+        </div>
+
+
+        <!-- Game over -->
+        <div class="alertTheEnd">
+            <h2>Game over!</h2>
+            <hr>
+            <strong>Score: <span>0</span> điểm</strong>
+            <div class="saveUser">
+                <label>User:</label>
+                <input type="text">
+                <button type="button" class="btn btn-danger save">save</button>
+                <button type="button" class="btn btn-success choiLai">Chơi lại</button>
+            </div>
+            <div class="action">
+                <button type="button" class="btn btn-info sort">Xếp hạng</button>
+                <button type="button" class="btn btn-success playBack">Chơi lại</button>
+            </div>
+        </div>
+
+
+        <!-- Xếp Hạng -->
+        <div class="tableSort">
+            <button type="button" class="btn btn-danger playBack01">Chơi lại</button>
+            <button type="button" class="btn btn-success goback">Quay lại</button>
+            <span style="font-weight: 600;">Điểm số cao nhất:<b style="color: red;"> 0 </b> - <b style="color: red;">Ny</b></span>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
