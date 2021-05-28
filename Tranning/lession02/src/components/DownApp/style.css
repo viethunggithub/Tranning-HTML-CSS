@@ -1,0 +1,93 @@
+.downapp {
+    background: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+
+.downapp_main {
+    background: url("http://static.truyenqq.com/template/frontend/images/qr-bg.png");
+    background-repeat: no-repeat;
+    height: 354px;
+    width: 725px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.downapp_main>.row {
+    width: 100%;
+}
+
+.downapp_main-QRCode {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.downapp_main-QRCode>img {
+    width: 112px;
+}
+
+.downapp_main-QRCode>p {
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+.downapp_icon {
+    display: flex;
+    cursor: pointer;
+}
+
+.downapp_icon img:first-child {
+    margin-right: 10px;
+}
+
+.downapp_main i {
+    font-size: 18px;
+    color: var(--background-green);
+    background: var(--background-white);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+}
+
+#downapp:focus~.downapp {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+#downapp {
+    position: absolute;
+    top: 250px;
+    right: 250px;
+}
+
+#wrap {
+    position: absolute;
+    top: 300px;
+    right: 250px;
+}

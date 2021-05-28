@@ -1,0 +1,235 @@
+.header {
+    background: #fbfbfb;
+    padding: 10px 0;
+}
+
+.header_main-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_menu-icon {
+    margin-right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--background-orange);
+    position: relative;
+    /* display: none; */
+}
+
+.header_menu-icon:hover .header_menu-icon-sub {
+    display: block;
+}
+
+.header_logo,
+.header_input img {
+    cursor: pointer;
+}
+
+.header_input {
+    display: flex;
+    align-items: center;
+    height: var(--height-header-input);
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    margin-left: 40px;
+}
+
+.header_input>input {
+    border-radius: 50px;
+    border: solid 1px #e0e0e0;
+    padding: 0 45px 0 20px;
+    color: #757575;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.header_input>input:focus~.header_history {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header_input>img {
+    position: absolute;
+    top: calc((var(--height-header-input) - 32px)/2);
+    right: 10px;
+}
+
+.header_menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_menu-item {
+    margin-right: 20px;
+}
+
+.header_menu-item a,
+.header_menu-item label {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header_menu-item a:hover {
+    color: var(--background-orange);
+}
+
+.header_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height-header-input);
+    border-left: 1px solid #bbb;
+    padding-left: 25px;
+}
+
+.header_button button {
+    height: 100%;
+    background: var(--background-blue);
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-white);
+    border-radius: 5px;
+    padding: 0 10px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+}
+
+.header_button button:first-child {
+    margin-right: 10px;
+    background: var(--background-orange);
+}
+
+.header_menu-icon-sub {
+    position: absolute;
+    background: var(--color-white);
+    padding: 10px;
+    top: 15px;
+    z-index: 10;
+    right: -30px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+    width: 130px;
+    display: none;
+    animation: showSmotion .5s ease;
+}
+
+@keyframes showSmotion {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header_menu-icon-sub>.header_menu-item {
+    padding: 5px;
+}
+
+.header_history {
+    top: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 15%);
+    background-color: #f9f9f9;
+    position: absolute;
+    top: var(--height-header-input);
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .1s;
+    z-index: 100;
+    visibility: hidden;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.header_history a {
+    text-decoration: none;
+    color: black;
+}
+
+.header_history a:hover {
+    color: var(--background-orange);
+}
+
+.header_history::-webkit-scrollbar {
+    border-radius: 100px;
+    width: 4px;
+}
+
+.header_history::-webkit-scrollbar-thumb {
+    background: var(--background-orange);
+}
+
+.header_history-title {
+    font-weight: 700;
+    color: var(--background-orange);
+    margin: 20px 20px 10px;
+}
+
+.header_history-item {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header_history-details {
+    padding-left: 15px;
+}
+
+.header_history img {
+    width: 72px;
+    height: 80px;
+}
+
+@media (min-width:1024px) and (max-width:1239px) {
+    .wide .header_logo,
+    .wide .header_menu {
+        display: none;
+    }
+    .wide .header_button {
+        display: flex;
+    }
+    .wide .header_main-item {
+        display: flex;
+    }
+    .wide .header_menu-icon {
+        display: flex;
+    }
+}
+
+@media (max-width:1024px) {
+    .header_menu-icon {
+        align-items: center;
+    }
+    .header_main-item:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .header_menu {
+        display: none;
+    }
+    .header_input {
+        margin-left: 0;
+    }
+    .header_button {
+        padding-left: 0;
+        border: none;
+    }
+}

@@ -1,0 +1,27 @@
+:root {
+    --height-header: 64px;
+    --background-header: #fbfbfb;
+    --background-gray: #ebebeb;
+    --background-orange: #f18121;
+    --background-blue: #56ccf2;
+    --background-green: #8bc34a;
+    --background-purple: #bd10e0;
+    --background-red: #ff2853;
+    --background-white: #ffffff;
+    --color-white: #fbf6fa;
+    --color-gray: #afacaf;
+    --height-header: 64px;
+    --height-header-input: 44px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Quicksand, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background: var(--background-gray);
+}

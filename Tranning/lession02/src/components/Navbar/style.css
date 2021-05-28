@@ -1,0 +1,224 @@
+.navbar {
+    background: var(--background-orange);
+}
+
+.navbar_main {
+    justify-content: flex-start;
+    height: 50px;
+    position: relative;
+}
+
+.navbar_main-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar_main-item:last-child {
+    justify-content: flex-start;
+}
+
+.navbar_main-item:nth-child(2):hover .navbar_genre {
+    display: flex;
+}
+
+.navbar_main-item:nth-child(3):hover .navbar_sort {
+    display: flex;
+}
+
+.navbar_main-item:hover {
+    background: #f29c57;
+}
+
+.navbar_main-item a {
+    text-decoration: none;
+    position: relative;
+    color: var(--color-white);
+}
+
+.navbar_arrow>a::before {
+    content: "";
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border: 1px solid;
+    border-color: transparent white white transparent;
+    right: -20px;
+    top: 2px;
+    transform: rotate(45deg);
+}
+
+.navbar_genre,
+.navbar_sort {
+    background: var(--color-white);
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+    z-index: 4;
+}
+
+.navbar_genre-item,
+.navbar_sort-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar_genre-item a,
+.navbar_sort-item a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+.navbar_genre-item a:hover,
+.navbar_sort-item a:hover {
+    color: var(--background-orange);
+}
+
+.navbar_main-list-icon {
+    background: var(--color-white);
+    position: absolute;
+    color: var(--background-orange);
+    left: 8px;
+    top: 68px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+    cursor: pointer;
+    display: none;
+}
+
+.navbar_main-list-icon>i {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+}
+
+#navbar_main-list {
+    display: none;
+}
+
+.navbar_main-list {
+    background: var(--background-orange);
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    left: 0;
+    top: 119px;
+    z-index: 5;
+}
+
+@keyframes navbar_main-list {
+    from {
+        transform: translateX(-140px);
+    }
+    to {
+        transform: translateX(0px);
+        display: block;
+    }
+}
+
+@keyframes navbar_main-list-rev {
+    from {
+        transform: translateX(0px);
+        display: block;
+    }
+    to {
+        transform: translateX(-140px);
+        display: none;
+    }
+}
+
+.navbar_main-list .navbar_main-item:last-child a {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_main-list .navbar_main-item:last-child i {
+    color: var(--color-white);
+    margin-right: 5px;
+}
+
+#navbar_main-list:checked~.navbar_main-list {
+    animation: navbar_main-list 1s ease forwards;
+}
+
+#navbar_main-list:not(:checked)~.navbar_main-list {
+    animation: navbar_main-list-rev 1s ease forwards;
+}
+
+.navbar_main-list .navbar_genre,
+.navbar_main-list .navbar_sort {
+    background: var(--color-white);
+    position: absolute;
+    right: 0;
+    left: 130px;
+    top: 0;
+    display: none;
+    width: 500px;
+}
+
+.navbar_main-list .navbar_sort {
+    top: 50px;
+}
+
+.navbar_main-list .navbar_arrow:first-child:hover .navbar_main-list .navbar_genre {
+    display: block;
+}
+
+.navbar_main-list .navbar_main-item {
+    justify-content: left;
+}
+
+@media (max-width:1239px) {
+    .wide .navbar_main-item:nth-child(6),
+    .wide .navbar_main-item:nth-child(7),
+    .wide .navbar_main-item:nth-child(8),
+    .wide .navbar_main-item:nth-child(9),
+    .wide .navbar_main-item:nth-child(10) {
+        display: none;
+    }
+    .wide .l-1 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+    .wide .navbar_main-item {
+        display: flex;
+    }
+}
+
+@media (max-width:1023px) {
+    .navbar_main {
+        display: none;
+    }
+    .navbar_main-list-icon,
+    .navbar_main-list {
+        display: block;
+    }
+    .wide .navbar_main-item:nth-child(6),
+    .wide .navbar_main-item:nth-child(7),
+    .wide .navbar_main-item:nth-child(8),
+    .wide .navbar_main-item:nth-child(9),
+    .wide .navbar_main-item:nth-child(10) {
+        display: block;
+    }
+    .navbar_main-list .navbar_arrow>a::before {
+        transform: rotate(-45deg);
+    }
+}

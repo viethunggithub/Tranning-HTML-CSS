@@ -1,0 +1,7 @@
+.story_boy>.story_update-title>a {
+    color: var(--background-orange);
+}
+
+.story_boy .story_update-time>span:first-child {
+    background: var(--background-orange);
+}

@@ -1,0 +1,213 @@
+.story_update-list {
+    margin-bottom: 10px;
+}
+
+.story_update-list>.col {
+    padding: 0 4px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.story_update-title {
+    display: flex;
+    margin: 15px 0 20px 0;
+    align-items: center;
+}
+
+.story_update-title img {
+    height: 24px;
+    margin-right: 5px;
+}
+
+.story_update-title:hover a {
+    color: var(--background-orange);
+}
+
+.story_update-title a {
+    text-decoration: none;
+    color: var(--background-blue);
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+.story_update-item {
+    border-radius: 6px;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+}
+
+.story_update-item:hover .story_update-item-info {
+    transform: translateX(10px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.story_update-item img {
+    height: auto;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.story_update-time {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    color: var(--color-white);
+}
+
+.story_update-time span {
+    background: var(--background-blue);
+    padding: 2px 6px 3px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.story_update-time span:last-child {
+    /* display: none; */
+    background: var(--background-red);
+    animation: span_lastchild 1s steps(5, start) infinite
+}
+
+@keyframes span_lastchild {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+.story_update-item-title {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.story_update-item-title p {
+    font-size: 13px;
+    margin: 2px 0;
+}
+
+.story_update-item-title p:hover,
+.story_update-item-title>h3:hover {
+    color: var(--background-orange);
+}
+
+.story_update-loadmore {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.story_update-loadmore a {
+    background: var(--background-orange);
+    outline: none;
+    border: none;
+    color: var(--color-white);
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    height: 48px;
+    font-weight: 700;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 25%);
+    cursor: pointer;
+    transition: all .3s ease;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.story_update-loadmore a:hover {
+    opacity: 0.5;
+}
+
+.story_update-item-info,
+.story_update-item-info-rev {
+    background: var(--color-white);
+    z-index: 11;
+    width: 310px;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    border-radius: 6px;
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 25%);
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    font-size: 13px;
+    transform: translateX(40px);
+}
+
+.story_update-item:hover .story_update-item-info-rev {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-10px);
+}
+
+.story_update-item-info-rev::before {
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent transparent var(--color-white);
+    position: absolute;
+    top: 20px;
+    right: -20px;
+}
+
+.story_update-item-info-rev {
+    right: 100%;
+    left: unset;
+    transform: translateX(-40px);
+}
+
+.story_update-item-info-rev .story_update-item-info>p,
+.story_update-item-info .info_details {
+    line-height: 1.5;
+}
+
+.story_update-item-info>p:first-child,
+.story_update-item-info-rev>p:first-child {
+    font-weight: 600;
+    color: var(--background-orange);
+}
+
+.story_update-item-info::before {
+    content: "";
+    border: 10px solid;
+    border-color: transparent var(--color-white) transparent transparent;
+    top: 20px;
+    left: -20px;
+    position: absolute;
+}
+
+.info_tags {
+    margin: 10px 0;
+}
+
+.info_tags a {
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-white);
+    padding: 3px 7px 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background: var(--background-blue);
+    text-decoration: none;
+}
+
+.info_tags a:hover {
+    color: var(--background-orange);
+    transition: all .3s ease;
+}
+
+@media (max-width:1023px) {
+    .story_update-item-info,
+    .story_update-item-info-rev {
+        display: none;
+    }
+}

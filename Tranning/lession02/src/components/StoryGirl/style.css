@@ -1,0 +1,11 @@
+.story_girl>.story_update-title>a {
+    color: var(--background-red);
+}
+
+.story_girl>.story_update-title>a:hover {
+    color: var(--background-orange);
+}
+
+.story_girl .story_update-time>span:first-child {
+    background: var(--background-red);
+}
