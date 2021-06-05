@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "Code_ID": "e499s47gq0m-opthmfkfmt9",
+      "name": "IPhone XS Max",
+      "price": "120",
+      "status": true,
+      "details": {},
+      "id": 4
+    },
+    {
+      "Code_ID": "dwjjaukjx7wl-63cwta3vfbe",
+      "name": "Oppo Quang Hieu",
+      "price": "300",
+      "status": false,
+      "details": {},
+      "id": 5
+    },
+    {
+      "Code_ID": "5d3smrhhimho-hmp5t4w0szee",
+      "name": "",
+      "price": "",
+      "status": false,
+      "details": {},
+      "id": 7
+    },
+    {
+      "Code_ID": "6zmwo9mhxyx9-0tuu2gt0cvhc",
+      "name": "opopo s4",
+      "price": "300",
+      "status": true,
+      "details": {},
+      "id": 8
+    },
+    {
+      "Code_ID": "h8udcn9c01nm-zvk6p1ieh9",
+      "name": "samsung GGGG",
+      "price": "100",
+      "status": false,
+      "details": {},
+      "id": 9
+    }
+  ]
+}
