@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.arow-header-right,
+.arow-header-left {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 7px 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: solid 2px #dedede;
+}
+
+.arow-header-left {
+    position: absolute;
+    top: 0;
+    left: -60px;
+    background-color: #e8e8e8;
+    padding: 10px 20px;
+    border-right: solid 2px #dedede;
+    height: 60px;
+    width: 60px;
+}
+
+.promotion-last,
+.arow-header-right,
+#header-promotion-slide,
+.arow-header-right {
+    display: none;
+}
+
+@keyframes header-promotion-slide-rev {
+    from {
+        transform: translateX(-390px);
+    }
+    to {
+        transform: translateX(390px);
+    }
+}
+
+@keyframes header-promotion-slide {
+    from {
+        transform: translateX(390px);
+    }
+    to {
+        transform: translateX(-390px);
+    }
+}
+
+#header-promotion-slide:checked~.header-promotion-slide {
+    visibility: visible;
+    animation: header-promotion-slide 1s ease forwards
+}
+
+.navbar-mobile {
+    border-radius: 0;
+    color: #ffffff;
+    padding: 0;
+    background: radial-gradient(ellipse at center, #3d3d3d 0%, #1e1e1e 57%);
+    justify-content: space-between;
+    display: flex;
+}
+
+.navbar-mobile i {
+    font-size: 30px;
+    background-color: #313131;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#navbar-input-icon {
+    display: none;
+}
+
+#navbar-input-icon:checked~.navbar>.row {
+    animation: navbar-input 1s ease forwards;
+}
+
+@keyframes navbar-input {
+    from {
+        transform: translateX(-192px);
+    }
+    to {
+        transform: translateX(192px);
+    }
+}
+
+@keyframes navbar-input-rev {
+    from {
+        transform: translateX(192px);
+    }
+    to {
+        transform: translateX(-192px);
+    }
+}
+
+
+/* myproject */
+
+@media(max-width:1023px) {
+    .arow-header-right,
+    .promotion-last {
+        display: block;
+    }
+    .arow-header-right:hover,
+    .arow-header-left:hover {
+        background-color: #ffffff;
+    }
+    .header-promotion-slide {
+        background-color: #e8e8e8;
+        position: fixed;
+        z-index: 5;
+        flex-direction: column;
+        top: 0;
+        right: -390px;
+        padding: 20px;
+        align-items: center;
+        height: 100%;
+        justify-content: flex-start;
+        animation: header-promotion-slide-rev 1s ease forwards;
+    }
+    .header-promotion-slide>a {
+        margin: 10px 20px;
+        background: #e8e8e8 url('https://assets.pokemon.com/static2/_ui/img/gus/promo-bg.png') 0 0 no-repeat;
+        padding: 0 50px;
+    }
+    .evolution-arrow {
+        display: none;
+    }
+}
+
+@media (max-width:740px) {
+    .search,
+    .content-container,
+    .navbar>.row {
+        padding: 10px 20px;
+    }
+    .arow-header-right,
+    .promotion-last {
+        display: block;
+    }
+    .navbar>.row {
+        flex-direction: column;
+        left: -192px;
+        position: fixed;
+        background-color: #e8e8e8;
+        z-index: 3;
+        top: 114px;
+        display: flex;
+        animation: navbar-input-rev ease 1s forwards;
+    }
+    .evolutions-list {
+        flex-direction: column;
+    }
+    .evolutions-item {
+        margin-bottom: 30px;
+    }
+    .footer-mobile {
+        padding: 0 40px;
+    }
+    .footer-mobile>.col>.footer-img {
+        border: none;
+        text-align: left;
+        margin-top: 40px;
+    }
+    .evolution-arrow {
+        display: none;
+    }
+}
