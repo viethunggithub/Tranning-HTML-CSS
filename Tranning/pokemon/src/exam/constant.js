@@ -1,3 +1,5 @@
+import { randomNumber } from '../exam/randomNumber'
+
 class Constant {
     toUppercaseChart(string) {
         return string.charAt(0).toUpperCase() + string.slice(1)
@@ -174,6 +176,30 @@ class Constant {
 
 
         return result
+    }
+    toSurprise_me(surprise_me) {
+        var arrays898 = []
+        for (var i = 1; i <= 898; i++) {
+            arrays898.push(i)
+        }
+
+        arrays898.map((item, index) => {
+            surprise_me.map((num, id) => {
+                if (Number(item) === Number(num)) {
+                    arrays898.splice(index, 1)
+                }
+            })
+        })
+
+        var arraysNew = []
+        var arraysNext = []
+        for (var j = 1; j <= 20; j++) {
+            randomNumber(arraysNew, 878)
+        }
+        arraysNew.map((item, index) => {
+            arraysNext.push(arrays898[item])
+        })
+        return arraysNext
     }
 }
 export default new Constant();

@@ -11,6 +11,7 @@ import { fetchTypeCartoon } from '../slice/typeCartoon'
 import { fetchEvolution } from '../slice/evolutionCartoon'
 import SlickCarousel from './SlickCarousel'
 import SlickCard from './SlickCard'
+import ArrowSection from './ArrowSection'
 
 const Div = styled.div`
     padding: 0 40px 0 35px;
@@ -43,8 +44,10 @@ const Div = styled.div`
         .nextCartoon, .prevCartoon{
             text-decoration: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            padding-left: 210px;
             align-items: center;
+            align-items: flex-start;
             padding-top: 20px;
             font-size: 24px;
             color: #616161;
@@ -62,6 +65,10 @@ const Div = styled.div`
                 }
             }
         }
+        .nextCartoon{
+            justify-content: flex-end;
+            padding-right: 210px;
+        }
         transition: .5s all;
         :hover{
             background-color: #30a7d7;
@@ -77,13 +84,13 @@ const Div = styled.div`
         font-size: 225%;
         margin-top: 0.5em;
         text-align: center;
-        width: 55%;
+        width: 82%;
         word-break: break-word;
         position: absolute;
         background-color: #ffffff;
         bottom: 0;
         height: 51px;
-        left: 22%;
+        left: 8%;
         padding-top: 10px;
         ::before{
             background: transparent url('https://assets.pokemon.com/static2/_ui/img/chrome/notches/notch-white-xxl.png') no-repeat 0 0;
@@ -124,7 +131,7 @@ const Div = styled.div`
     }
     .stats-cartoon{
         background-color: #a4a4a4;
-        padding:20px 30px;
+        padding:20px;
         border-radius: 10px;
         margin-top: 15px;
         h3{
@@ -137,9 +144,8 @@ const Div = styled.div`
         display: flex;
         justify-content: space-evenly;
         .col{
-            :nth-child(2){
-                padding-left: 12px;
-                margin-left: 5px;
+            :nth-child(1), :nth-child(2){
+                padding: 0 12px;
             }
         }
     }
@@ -340,8 +346,6 @@ export default function Details() {
     const params = useParams()
     const cartoon = useSelector(state => state.cartoon)
     const type = useSelector(state => state.type)
-    const nextCartoon = useSelector(state => state.nextCartoon)
-    const prevCartoon = useSelector(state => state.prevCartoon)
     const evolution = useSelector(state => state.evolution)
     const dispatch = useDispatch()
     const idNext = Number(params.id) + 1 > 898 ? 1 : Number(params.id) + 1
@@ -361,42 +365,7 @@ export default function Details() {
         <Div>
             <div className="wrap-details">
                 <div className="details-backspace"></div>
-                <div className="row">
-                    <div className="col l-6 m-6 c-6">
-                        < div className="pagination">
-                            <Link to={`/details/${idPrev}`} className="prevCartoon">
-                                <i className="fas fa-angle-left"></i>
-                                <span>
-                                    {
-                                        Constant.toChangeID(prevCartoon.result.id)
-                                    }
-                                </span>
-                                <span>
-                                    {
-                                        Constant.toUppercaseChart(prevCartoon.result.name)
-                                    }
-                                </span>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col l-6 m-6 c-6">
-                        <div className="pagination">
-                            <Link to={`/details/${idNext}`} className="nextCartoon">
-                                <span>
-                                    {
-                                        Constant.toUppercaseChart(nextCartoon.result.name)
-                                    }
-                                </span>
-                                <span>
-                                    {
-                                        Constant.toChangeID(nextCartoon.result.id)
-                                    }
-                                </span>
-                                <i className="fas fa-angle-right"></i>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                <ArrowSection />
                 <div className="grid wide">
                     <div className="details-cartoon">
                         <div className="name-cartoon">

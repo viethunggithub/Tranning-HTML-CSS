@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ListCartoon from './ListCartoon'
 import ProCartoon from './ProCartoon'
-import { useDispatch } from 'react-redux';
-import { sortAtoZ, sortHightNumber, sortLowerNumber, sortZtoA } from '../slice/sortCartoon'
-import { fetchAllCartoon } from '../slice/pokemonSlice'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllCartoon, changeHightNumber, fetchSurpriseMeBlank } from '../slice/pokemonSlice'
+import { randomNumber } from '../exam/randomNumber'
 
 const Div = styled.div`
     background: #424242 url('https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png');
@@ -41,9 +40,11 @@ const Div = styled.div`
             align-items: center;
             input{
                 height: 40px;
-                padding: 8px 0;
+                padding: 4px 8px;
+                font-size: 100%;
                 width: 100%;
                 box-shadow: #919191 -1px 0px 1px 1px;
+                border-radius: 4px;
             }
             i{
                 font-size: 20px;
@@ -194,6 +195,11 @@ const Div = styled.div`
     }
     .cartoon-list{
         margin: 0 10px 50px 0;
+        b{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
     }
     .content-bottom{
         height: 35px;
@@ -225,6 +231,9 @@ export default function Content() {
     const [isForm, setIsForm] = useState('')
     const [isShow, setIsShow] = useState(false)
     const [titleSort, setTitleSort] = useState('Lowest Number (First)')
+    const pokemon = useSelector(state => state.pokemon)
+    const [isLoading, setIsLoading] = useState('')
+
 
     const onSelect = () => {
         setIsShow(!isShow)
@@ -232,17 +241,17 @@ export default function Content() {
     const onClickSort = (e) => {
         setTitleSort(e.target.innerHTML)
         switch (e.target.getAttribute('data')) {
-            case '3':
-                dispatch(sortHightNumber())
+            case 'Highest Number (First)':
+                dispatch(changeHightNumber('Highest Number (First)'))
                 break;
-            case '4':
-                dispatch(sortAtoZ())
+            case 'A-Z':
+                dispatch(changeHightNumber('A-Z'))
                 break;
-            case '5':
-                dispatch(sortZtoA())
+            case 'Z-A':
+                dispatch(changeHightNumber('Z-A'))
                 break;
             default:
-                dispatch(sortLowerNumber())
+                dispatch(changeHightNumber('Lowest Number (First)'))
                 break;
         }
     }
@@ -254,10 +263,25 @@ export default function Content() {
         dispatch(fetchAllCartoon({
             url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
             keyString: isForm,
-            start:0
+            start: 0
         }))
     }
     
+    const onSurprise = () => {
+        var surprice_me = []
+        for (var i = 1; i <= 20; i++) {
+            randomNumber(surprice_me, 898)
+        }
+        dispatch(fetchSurpriseMeBlank(surprice_me))
+    }
+
+    useEffect(() => {
+        if (pokemon.result.length === 0 && pokemon.status != 'Fulfilled') {
+            setIsLoading('Đang tải....')
+        }else{
+            setIsLoading("")
+        }
+    }, [pokemon])
 
     return (
         <Div>
@@ -289,6 +313,7 @@ export default function Content() {
                 </div>
 
                 <div className="show-advanced">
+                    {/* <h1>Hung</h1> */}
                     <div className="row">
                         <div className="col l-4 m-4 c-4"></div>
                         <div className="col l-4 m-4 c-4 show-advanced-search">
@@ -305,11 +330,10 @@ export default function Content() {
                     <div className="surprice-sort">
                         <div className="row">
                             <div className="col l-5 m-5 c-5">
-                                <a href="/">
-                                    <button>
-                                        <i className="fas fa-sync-alt"></i>
-                                        Surprise Me!</button>
-                                </a>
+                                <button onClick={onSurprise}>
+                                    <i className="fas fa-sync-alt"></i>
+                                        Surprise Me!
+                                </button>
                             </div>
                             <div className="col l-2 m-2 c-2"></div>
                             <div className="col l-5 m-5 c-5">
@@ -323,10 +347,10 @@ export default function Content() {
                                         {
                                             isShow && <ul>
                                                 <li data="1" onClick={onClickSort}>Sort result by...</li>
-                                                <li data="2" onClick={onClickSort}>Lowest Number (First)</li>
-                                                <li data="3" onClick={onClickSort}>Highest Number (First)</li>
-                                                <li data="4" onClick={onClickSort}>A-Z</li>
-                                                <li data="5" onClick={onClickSort}>Z-A</li>
+                                                <li data="Lowest Number (First)" onClick={onClickSort}>Lowest Number (First)</li>
+                                                <li data="Highest Number (First)" onClick={onClickSort}>Highest Number (First)</li>
+                                                <li data="A-Z" onClick={onClickSort}>A-Z</li>
+                                                <li data="Z-A" onClick={onClickSort}>Z-A</li>
                                             </ul>
                                         }
                                     </li>
@@ -336,6 +360,7 @@ export default function Content() {
                         </div>
                     </div>
                     <div className="cartoon-list">
+                        <b>{isLoading}</b>
                         <ListCartoon />
                     </div>
                     <div className="cartoon-pro">

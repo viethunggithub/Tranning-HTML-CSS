@@ -29,10 +29,23 @@ export const fetchSortAllPokemon = createAsyncThunk(
     }
 )
 
-
-
-
-
+export const fetchSurpriseMe = createAsyncThunk(
+    'pokemon/fetchSurpriseMe',
+    async (params, thunkAPI) => {
+        var result = []
+        for (var i = 0; i < params.length; i++) {
+            const res = await CALLAPI('get', `https://pokeapi.co/api/v2/pokemon/${params[i]}`, null)
+            result.push({
+                name: res.data.name,
+                url: `https://pokeapi.co/api/v2/pokemon/${params[i]}`
+            })
+        }
+        thunkAPI.dispatch(getSurprise_me({
+            results: result,
+            surprise_me: params
+        }))
+    }
+)
 
 //nhiem vu xoa sach state de chuyen sang sort
 export const fetchSortBlank = createAsyncThunk(
@@ -76,6 +89,25 @@ export const fetchAllCartoon = createAsyncThunk(
         }))
     }
 )
+export const fetchSurpriseMeBlank = createAsyncThunk(
+    'pokemon/fetchSurpriseMe',
+    async (params, thunkAPI) => {
+        thunkAPI.dispatch(sortBlank())
+        var result = []
+        for (var i = 0; i < params.length; i++) {
+            const res = await CALLAPI('get', `https://pokeapi.co/api/v2/pokemon/${params[i]}`, null)
+            result.push({
+                name: res.data.name,
+                url: `https://pokeapi.co/api/v2/pokemon/${params[i]}`
+            })
+        }
+        thunkAPI.dispatch(getSurprise_me({
+            results: result,
+            surprise_me: params
+        }))
+    }
+)
+
 
 const pokemon = createSlice({
     name: 'pokemon',
@@ -83,41 +115,48 @@ const pokemon = createSlice({
         status: 'idle',
         error: null,
         result: [],
+        sortType: 'Lowest Number (First)',
         next: '',
         previous: '',
         urlExist: '',
-        start: 0
+        start: 0,
+        surprise_me: []
     },
     reducers: {
         sortBlank: (state, action) => {
-            return {
-                status: 'idle',
-                error: null,
-                result: [],
-                next: '',
-                previous: '',
-                urlExist: '',
-                start: 0
-            }
+            state.status = 'idle'
+            state.error = null
+            state.result = []
+            state.next = ''
+            state.previous = ''
+            state.urlExist = ''
+            state.start = 0
+            state.surprise_me = []
         },
         getSorHight: (state, action) => {
-            return {
-                ...state,
-                next: action.payload.next,
-                previous: action.payload.previous,
-                result: state.result.concat(action.payload.results.reverse())
-            }
+            state.next = action.payload.next
+            state.previous = action.payload.previous
+            state.result = state.result.concat(action.payload.results.reverse())
         },
         getPokemon: (state, action) => {
-            return {
-                ...state,
-                next: action.payload.next,
-                result: state.result.concat(action.payload.results),
-                urlExist: 'https://pokeapi.co/api/v2/pokemon',
-                start: action.payload.start ? action.payload.start : 0
-            }
+            state.next = action.payload.next
+            state.result = state.result.concat(action.payload.results)
+            state.urlExist = 'https://pokeapi.co/api/v2/pokemon'
+            state.start = action.payload.start ? action.payload.start : 0
+        },
+        changeHightNumber: (state, action) => {
+            state.sortType = action.payload
+        },
+        getSurprise_me: (state, action) => {
+            state.result = state.result.concat(action.payload.results)
+            state.surprise_me = state.surprise_me.concat(action.payload.surprise_me)
+        }
+    },
+    extraReducers: {
+        [fetchSurpriseMe.fulfilled]: (state, action) => {
+            state.status = 'Fulfilled'
         }
     }
 })
-export const { getPokemon, sortBlank, getSorHight } = pokemon.actions
+export const { getPokemon, sortBlank, getSorHight, changeHightNumber, getSurprise_me } = pokemon.actions
 export default pokemon.reducer

@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components'
 import ItemCartoon from './ItemCartoon'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPokemon, fetchSortBlank, fetchBlackBlank, fetchSortHightPokemon, fetchAllBlank, fetchSortAllPokemon } from '../slice/pokemonSlice'
-import { useState } from 'react'
-
+import { fetchPokemon, fetchSortBlank, fetchBlackBlank, fetchSortHightPokemon, fetchAllBlank, fetchSortAllPokemon, fetchSurpriseMe } from '../slice/pokemonSlice'
+import { randomNumber } from '../exam/randomNumber'
+import Constant from '../exam/constant'
 
 const cartoon_keyframe = keyframes`
     from{
@@ -73,13 +73,13 @@ const Div = styled.div`
 export default function ListCartoon() {
     const pokemon = useSelector(state => state.pokemon)
     const urlExist = useSelector(state => state.pokemon.urlExist)
-    const sort = useSelector(state => state.sort)
+    const sortType = useSelector(state => state.pokemon.sortType)
     const start = useSelector(state => state.pokemon.start)
     const eleListCartoon = document.querySelector('.cartoon-list')
     const dispatch = useDispatch()
     const [isLoadMore, setIsLoadMore] = useState(false)
     const [isLoad, setIsLoad] = useState(false)
-
+    const surprise_me = useSelector(state => state.pokemon.surprise_me)
 
 
     const onLoadCartoon = () => {
@@ -87,19 +87,25 @@ export default function ListCartoon() {
         var cartoonPro = document.querySelector('.cartoon-pro')
         loadMore.setAttribute('style', "display:none")
         cartoonPro.setAttribute('style', "display:none")
+        setIsLoadMore(true)
 
-        switch (sort.result) {
-            case 3:
+        if (surprise_me.length > 0) {
+            dispatch(fetchSurpriseMe(Constant.toSurprise_me(surprise_me)))
+            return
+        }
+
+        switch (sortType) {
+            case 'Highest Number (First)':
                 dispatch(fetchSortHightPokemon(pokemon.previous))
                 break;
-            case 4:
+            case 'A-Z':
                 dispatch(fetchSortAllPokemon({
                     url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                     start: start + 20,
                     isSortAtoZ: 1
                 }))
                 break;
-            case 4:
+            case 'A-Z':
                 dispatch(fetchSortAllPokemon({
                     url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                     start: start + 20,
@@ -110,7 +116,6 @@ export default function ListCartoon() {
                 dispatch(fetchPokemon(pokemon.next))
                 break;
         }
-        setIsLoadMore(true)
     }
 
 
@@ -129,18 +134,24 @@ export default function ListCartoon() {
 
     useEffect(() => {
         if (isLoad) {
-            switch (sort.result) {
-                case 3:
+
+            if (surprise_me.length > 0) {                
+                dispatch(fetchSurpriseMe(Constant.toSurprise_me(surprise_me)))
+                return
+            }
+
+            switch (sortType) {
+                case 'Highest Number (First)':
                     dispatch(fetchSortHightPokemon(pokemon.previous))
                     break;
-                case 4:
+                case 'A-Z':
                     dispatch(fetchSortAllPokemon({
                         url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                         start: start + 20,
                         isSortAtoZ: 1
                     }))
                     break;
-                case 5:
+                case 'Z-A':
                     dispatch(fetchSortAllPokemon({
                         url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                         start: start + 20,
@@ -154,6 +165,7 @@ export default function ListCartoon() {
         }
     }, [isLoad])
 
+    // khi scroll chuột
     useEffect(() => {
         if (isLoadMore) {
             window.addEventListener('scroll', scrollFunction);
@@ -165,23 +177,23 @@ export default function ListCartoon() {
 
 
     useEffect(() => {
-        switch (sort.result) {
-            case 3:
+        switch (sortType) {
+            case 'Highest Number (First)':
                 dispatch(fetchSortBlank('https://pokeapi.co/api/v2/pokemon/?offset=878&limit=20'))
                 break;
-            case 2:
+            case 'Lowest Number (First)':
                 if (urlExist !== 'https://pokeapi.co/api/v2/pokemon') {
                     dispatch(fetchBlackBlank('https://pokeapi.co/api/v2/pokemon'))
                 }
                 break;
-            case 4:
+            case 'A-Z':
                 dispatch(fetchAllBlank({
                     url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                     start: 0,
                     isSortAtoZ: 1
                 }))
                 break;
-            case 5:
+            case 'Z-A':
                 dispatch(fetchAllBlank({
                     url: 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=898',
                     start: 0,
@@ -191,7 +203,7 @@ export default function ListCartoon() {
             default:
                 break;
         }
-    }, [sort])
+    }, [sortType])
 
 
     return (
